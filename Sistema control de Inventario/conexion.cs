@@ -1,0 +1,82 @@
+﻿using MySqlConnector;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Sistema_control_de_Inventario
+{
+
+    public class conexion
+    {
+        string servidor = "127.0.0.1";
+        string puerto = "3306";
+        string inventario = "root";
+        string clave = "";
+        string usuario;
+        string pass;
+
+        public conexion(string usuario, string pass)
+        {
+            this.usuario = usuario;
+            this.pass = pass;
+        }
+
+       
+
+        public int Conexion()
+        {
+             
+                string cadena = "server =" + servidor + ";port=" + puerto + ";user id=" + inventario + ";password=" + clave + ";database=inventario";
+
+                string consulta = "SELECT usuario, contraseña FROM login where " + "usuario='" + this.usuario + "'and contraseña='" + this.pass + "'"; 
+                               
+                MySqlConnection conectar = new MySqlConnection(cadena);
+                MySqlCommand comando = new MySqlCommand(consulta, conectar);
+                comando.CommandTimeout = 60;
+                MySqlDataReader leer;
+            try
+            {
+                conectar.Open();
+
+                leer = comando.ExecuteReader();
+                if(leer.HasRows)
+                {
+                    MessageBox.Show("Bienvenido al Sistema de Inventario");
+                    inventario inv =new inventario();
+                    inv.Show();
+                    return 1;
+                }
+                else
+                {
+                    MessageBox.Show("Error");
+                    return 0;
+                }
+            }
+            catch(Exception ex) 
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return 0;
+                 
+
+
+                
+
+
+
+
+
+               
+
+      
+
+
+
+
+
+
+        }
+    }
+}
