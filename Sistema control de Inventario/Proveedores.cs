@@ -96,5 +96,51 @@ namespace Sistema_control_de_Inventario
         {
 
         }
+
+        private bool mensajeMostrado = false;
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            string textoBusqueda = textBox1.Text.ToLower(); // Obtener el texto de búsqueda
+
+
+
+            foreach (DataGridViewRow row in dataGridView1.Rows) // Recorrer todas las filas
+            {
+
+
+
+                string codigo = row.Cells["ID_Proveedores"].Value != null ? row.Cells["ID_Proveedores"].Value.ToString().ToLower() : "";
+                string nombreCompleto = row.Cells["Nombre_Proveedor"].Value != null ? row.Cells["Nombre_Proveedor"].Value.ToString().ToLower() : "";
+
+
+
+                if (codigo.IndexOf(textoBusqueda) == 0 || nombreCompleto.IndexOf(textoBusqueda) >= 0) // Buscar la coincidencia con el código o el nombre
+                {
+                    row.Selected = true; // Seleccionar la fila que contiene el código o el nombre
+                    dataGridView1.FirstDisplayedScrollingRowIndex = row.Index; // Desplazarse hacia la fila seleccionada
+                }
+                else
+                {
+                    row.Selected = false; // Deseleccionar la fila que no cumple con la búsqueda
+                }
+
+
+
+
+            }
+            if (dataGridView1.SelectedRows.Count == 0 && !string.IsNullOrEmpty(textoBusqueda)) // Si no se encontraron coincidencias y hay una búsqueda en curso
+            {
+                if (!mensajeMostrado)
+                {
+                    MessageBox.Show("No se encontraron registros que coincidan con la búsqueda.", "Búsqueda", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    mensajeMostrado = true;
+                }
+                else
+                {
+                    mensajeMostrado = false;
+                }
+            }
+        }
     }
 }
