@@ -29,207 +29,231 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(inventario));
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.proveedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.informesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cerrarSesionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.SuspendLayout();
+            menuStrip1 = new MenuStrip();
+            stockDeProductosToolStripMenuItem = new ToolStripMenuItem();
+            proveedoresToolStripMenuItem = new ToolStripMenuItem();
+            informesToolStripMenuItem = new ToolStripMenuItem();
+            cerrarSesionToolStripMenuItem = new ToolStripMenuItem();
+            salirToolStripMenuItem = new ToolStripMenuItem();
+            dataGridView1 = new DataGridView();
+            groupBox1 = new GroupBox();
+            textBox2 = new TextBox();
+            label2 = new Label();
+            label1 = new Label();
+            textBox1 = new TextBox();
+            groupBox2 = new GroupBox();
+            button3 = new Button();
+            btn_modificar = new Button();
+            button1 = new Button();
+            pictureBox1 = new PictureBox();
+            label3 = new Label();
+            menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            groupBox1.SuspendLayout();
+            groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            SuspendLayout();
             // 
             // menuStrip1
             // 
-            this.menuStrip1.BackColor = System.Drawing.SystemColors.Highlight;
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.proveedoresToolStripMenuItem,
-            this.informesToolStripMenuItem,
-            this.cerrarSesionToolStripMenuItem,
-            this.salirToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(884, 24);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
-            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
+            menuStrip1.BackColor = SystemColors.Highlight;
+            menuStrip1.Items.AddRange(new ToolStripItem[] { stockDeProductosToolStripMenuItem, proveedoresToolStripMenuItem, informesToolStripMenuItem, cerrarSesionToolStripMenuItem, salirToolStripMenuItem });
+            menuStrip1.Location = new Point(0, 0);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.Size = new Size(884, 24);
+            menuStrip1.TabIndex = 0;
+            menuStrip1.Text = "menuStrip1";
+            menuStrip1.ItemClicked += menuStrip1_ItemClicked;
+            // 
+            // stockDeProductosToolStripMenuItem
+            // 
+            stockDeProductosToolStripMenuItem.Name = "stockDeProductosToolStripMenuItem";
+            stockDeProductosToolStripMenuItem.Size = new Size(121, 20);
+            stockDeProductosToolStripMenuItem.Text = "Stock de productos";
+            stockDeProductosToolStripMenuItem.Click += stockDeProductosToolStripMenuItem_Click;
             // 
             // proveedoresToolStripMenuItem
             // 
-            this.proveedoresToolStripMenuItem.Name = "proveedoresToolStripMenuItem";
-            this.proveedoresToolStripMenuItem.Size = new System.Drawing.Size(84, 20);
-            this.proveedoresToolStripMenuItem.Text = "Proveedores";
-            this.proveedoresToolStripMenuItem.Click += new System.EventHandler(this.proveedoresToolStripMenuItem_Click);
+            proveedoresToolStripMenuItem.Name = "proveedoresToolStripMenuItem";
+            proveedoresToolStripMenuItem.Size = new Size(84, 20);
+            proveedoresToolStripMenuItem.Text = "Proveedores";
             // 
             // informesToolStripMenuItem
             // 
-            this.informesToolStripMenuItem.Name = "informesToolStripMenuItem";
-            this.informesToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
-            this.informesToolStripMenuItem.Text = "Informes";
+            informesToolStripMenuItem.Name = "informesToolStripMenuItem";
+            informesToolStripMenuItem.Size = new Size(66, 20);
+            informesToolStripMenuItem.Text = "Informes";
             // 
             // cerrarSesionToolStripMenuItem
             // 
-            this.cerrarSesionToolStripMenuItem.Name = "cerrarSesionToolStripMenuItem";
-            this.cerrarSesionToolStripMenuItem.Size = new System.Drawing.Size(87, 20);
-            this.cerrarSesionToolStripMenuItem.Text = "Cerrar sesion";
-            this.cerrarSesionToolStripMenuItem.Click += new System.EventHandler(this.cerrarSesionToolStripMenuItem_Click);
+            cerrarSesionToolStripMenuItem.Name = "cerrarSesionToolStripMenuItem";
+            cerrarSesionToolStripMenuItem.Size = new Size(87, 20);
+            cerrarSesionToolStripMenuItem.Text = "Cerrar sesion";
+            cerrarSesionToolStripMenuItem.Click += cerrarSesionToolStripMenuItem_Click;
             // 
             // salirToolStripMenuItem
             // 
-            this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(41, 20);
-            this.salirToolStripMenuItem.Text = "Salir";
-            this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
+            salirToolStripMenuItem.Name = "salirToolStripMenuItem";
+            salirToolStripMenuItem.Size = new Size(41, 20);
+            salirToolStripMenuItem.Text = "Salir";
+            salirToolStripMenuItem.Click += salirToolStripMenuItem_Click;
             // 
             // dataGridView1
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.SeaShell;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.GridColor = System.Drawing.Color.SkyBlue;
-            this.dataGridView1.Location = new System.Drawing.Point(276, 77);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(596, 415);
-            this.dataGridView1.TabIndex = 2;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView1.BackgroundColor = Color.SeaShell;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.GridColor = Color.SkyBlue;
+            dataGridView1.Location = new Point(276, 77);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowTemplate.Height = 25;
+            dataGridView1.Size = new Size(596, 415);
+            dataGridView1.TabIndex = 2;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Location = new System.Drawing.Point(23, 102);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(6);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(252, 96);
-            this.groupBox1.TabIndex = 3;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Filtrar productos";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            groupBox1.Controls.Add(textBox2);
+            groupBox1.Controls.Add(label2);
+            groupBox1.Controls.Add(label1);
+            groupBox1.Controls.Add(textBox1);
+            groupBox1.Location = new Point(23, 102);
+            groupBox1.Margin = new Padding(6);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(252, 96);
+            groupBox1.TabIndex = 3;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Filtrar productos";
+            groupBox1.Enter += groupBox1_Enter;
+            // 
+            // textBox2
+            // 
+            textBox2.Location = new Point(137, 54);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(100, 23);
+            textBox2.TabIndex = 3;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(6, 57);
+            label2.Name = "label2";
+            label2.Size = new Size(95, 15);
+            label2.TabIndex = 2;
+            label2.Text = "ID del producto :";
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(30, 44);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(81, 15);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Nombre o ID :";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            label1.AutoSize = true;
+            label1.Location = new Point(6, 31);
+            label1.Name = "label1";
+            label1.Size = new Size(128, 15);
+            label1.TabIndex = 1;
+            label1.Text = "Nombre del producto :";
+            label1.Click += label1_Click;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(117, 41);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 23);
-            this.textBox1.TabIndex = 0;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            textBox1.Location = new Point(137, 28);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(100, 23);
+            textBox1.TabIndex = 0;
+            textBox1.TextChanged += textBox1_TextChanged;
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.button3);
-            this.groupBox2.Controls.Add(this.button2);
-            this.groupBox2.Controls.Add(this.button1);
-            this.groupBox2.Location = new System.Drawing.Point(23, 207);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(250, 110);
-            this.groupBox2.TabIndex = 4;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Modificar ";
+            groupBox2.Controls.Add(button3);
+            groupBox2.Controls.Add(btn_modificar);
+            groupBox2.Controls.Add(button1);
+            groupBox2.Location = new Point(23, 207);
+            groupBox2.Name = "groupBox2";
+            groupBox2.Size = new Size(250, 110);
+            groupBox2.TabIndex = 4;
+            groupBox2.TabStop = false;
+            groupBox2.Text = "Modificar ";
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(70, 64);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(107, 40);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Agregar registro";
-            this.button3.UseVisualStyleBackColor = true;
+            button3.Location = new Point(70, 64);
+            button3.Name = "button3";
+            button3.Size = new Size(107, 40);
+            button3.TabIndex = 2;
+            button3.Text = "Agregar registro";
+            button3.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btn_modificar
             // 
-            this.button2.Location = new System.Drawing.Point(130, 22);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(114, 36);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Modificar registro";
-            this.button2.UseVisualStyleBackColor = true;
+            btn_modificar.Location = new Point(130, 22);
+            btn_modificar.Name = "btn_modificar";
+            btn_modificar.Size = new Size(114, 36);
+            btn_modificar.TabIndex = 1;
+            btn_modificar.Text = "Modificar registro";
+            btn_modificar.UseVisualStyleBackColor = true;
+            btn_modificar.Click += button2_Click;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(6, 22);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(118, 36);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Eliminar registro";
-            this.button1.UseVisualStyleBackColor = true;
+            button1.Location = new Point(6, 22);
+            button1.Name = "button1";
+            button1.Size = new Size(118, 36);
+            button1.TabIndex = 0;
+            button1.Text = "Eliminar registro";
+            button1.UseVisualStyleBackColor = true;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(34, 323);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(226, 169);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 5;
-            this.pictureBox1.TabStop = false;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(34, 323);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(226, 169);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 5;
+            pictureBox1.TabStop = false;
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Lucida Bright", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(502, 43);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(150, 31);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Productos";
+            label3.AutoSize = true;
+            label3.Font = new Font("Lucida Bright", 20.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label3.Location = new Point(502, 43);
+            label3.Name = "label3";
+            label3.Size = new Size(150, 31);
+            label3.TabIndex = 6;
+            label3.Text = "Productos";
             // 
             // inventario
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.SkyBlue;
-            this.ClientSize = new System.Drawing.Size(884, 504);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.menuStrip1);
-            this.MainMenuStrip = this.menuStrip1;
-            this.Name = "inventario";
-            this.Text = "inventario";
-            this.Load += new System.EventHandler(this.inventario_Load);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.SkyBlue;
+            ClientSize = new Size(884, 504);
+            Controls.Add(label3);
+            Controls.Add(pictureBox1);
+            Controls.Add(groupBox2);
+            Controls.Add(groupBox1);
+            Controls.Add(dataGridView1);
+            Controls.Add(menuStrip1);
+            MainMenuStrip = menuStrip1;
+            Name = "inventario";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "inventario";
+            FormClosing += inventario_FormClosing;
+            Load += inventario_Load;
+            menuStrip1.ResumeLayout(false);
+            menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
+            groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
         private MenuStrip menuStrip1;
+        private ToolStripMenuItem stockDeProductosToolStripMenuItem;
         private ToolStripMenuItem proveedoresToolStripMenuItem;
         private ToolStripMenuItem informesToolStripMenuItem;
         private ToolStripMenuItem cerrarSesionToolStripMenuItem;
@@ -238,9 +262,11 @@
         private GroupBox groupBox1;
         private TextBox textBox1;
         private Label label1;
+        private TextBox textBox2;
+        private Label label2;
         private GroupBox groupBox2;
         private Button button3;
-        private Button button2;
+        private Button btn_modificar;
         private Button button1;
         private PictureBox pictureBox1;
         private Label label3;
