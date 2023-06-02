@@ -35,11 +35,14 @@ namespace Sistema_control_de_Inventario
 
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
+
             if (MessageBox.Show("¿Desea Salir?", "Salir", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.Yes)
             {
                 this.Close();
             }
         }
+
+
 
         private void cerrarSesionToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -71,58 +74,14 @@ namespace Sistema_control_de_Inventario
 
         }
 
-        private bool mensajeMostrado = false;
-
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            string textoBusqueda = textBox1.Text.ToLower(); // Obtener el texto de búsqueda
 
-
-
-            foreach (DataGridViewRow row in dataGridView1.Rows) // Recorrer todas las filas
-            {
-
-
-
-                string codigo = row.Cells["ID_Producto"].Value != null ? row.Cells["ID_Producto"].Value.ToString().ToLower() : "";
-                string nombreCompleto = row.Cells["Nombre_Producto"].Value != null ? row.Cells["Nombre_Producto"].Value.ToString().ToLower() : "";
-
-
-
-                if (codigo.IndexOf(textoBusqueda) == 0 || nombreCompleto.IndexOf(textoBusqueda) >= 0) // Buscar la coincidencia con el código o el nombre
-                {
-                    row.Selected = true; // Seleccionar la fila que contiene el código o el nombre
-                    dataGridView1.FirstDisplayedScrollingRowIndex = row.Index; // Desplazarse hacia la fila seleccionada
-                }
-                else
-                {
-                    row.Selected = false; // Deseleccionar la fila que no cumple con la búsqueda
-                }
-
-
-
-
-            }
-            if (dataGridView1.SelectedRows.Count == 0 && !string.IsNullOrEmpty(textoBusqueda)) // Si no se encontraron coincidencias y hay una búsqueda en curso
-            {
-                if (!mensajeMostrado)
-                {
-                    MessageBox.Show("No se encontraron registros que coincidan con la búsqueda.", "Búsqueda", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    mensajeMostrado = true;
-                }
-                else
-                {
-                    mensajeMostrado = false;
-                }
-
-
-
-            }
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+
         }
 
         private void MostrarDatos()
@@ -163,11 +122,52 @@ namespace Sistema_control_de_Inventario
             }
         }
 
-        private void proveedoresToolStripMenuItem_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
-            Proveedores prov = new Proveedores();
-            prov.Show();
-            this.Hide();
+            string servidor = "127.0.0.1";
+            string puerto = "3306";
+            string inventario = "root";
+            string clave = "";
+            string usuario;
+            string pass;
+
+            string connectionString = "server =" + servidor + ";port=" + puerto + ";user id=" + inventario + ";password=" + clave + ";database=inventario";
+            MySqlConnection connection = new MySqlConnection(connectionString);
+
+            using (MySqlConnection conexion = new MySqlConnection(connectionString))
+            {
+                conexion.Open();
+
+                foreach (DataGridViewRow fila in dataGridView1.Rows)
+                {
+                    string idProducto = fila.Cells["ID_Producto"].Value.ToString();
+                    string nombreProducto = fila.Cells["Nombre_Producto"].Value.ToString();
+                    string cantidadProducto = fila.Cells["Cantidad_Producto"].Value.ToString();
+
+                    // Ejecutar la actualización en la base de datos
+                    string consulta = "UPDATE productos SET Nombre_Producto = @nombre, Cantidad_Producto = @cantidad WHERE ID_Producto = @id";
+                    using (MySqlCommand comando = new MySqlCommand(consulta, conexion))
+                    {
+                        comando.Parameters.AddWithValue("@nombre", nombreProducto);
+                        comando.Parameters.AddWithValue("@cantidad", cantidadProducto);
+                        comando.Parameters.AddWithValue("@id", idProducto);
+                        comando.ExecuteNonQuery();
+                    }
+                }
+
+                
+                MostrarDatos();
+
+                conexion.Close();
+
+                MessageBox.Show("Los registros se han actualizado correctamente.","Actualización Existosa",MessageBoxButtons.OK,MessageBoxIcon.Information);
+            }
+
+        }
+
+        private void inventario_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
         }
     }
 }

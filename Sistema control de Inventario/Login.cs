@@ -42,7 +42,7 @@ namespace Sistema_control_de_Inventario
         {
             string user = textBox1.Text;
             string pd = textBox2.Text;
-            conexion con = new conexion(user,pd);
+            conexion con = new conexion(user, pd);
             if (string.IsNullOrEmpty(user) && string.IsNullOrEmpty(pd))
             {
                 MessageBox.Show("Los datos estan vacios");
@@ -50,7 +50,7 @@ namespace Sistema_control_de_Inventario
             }
             else
             {
-               if(con.Conexion()==1)
+                if (con.Conexion() == 1)
                 {
                     this.Hide();
                 }
