@@ -43,7 +43,7 @@ namespace Sistema_control_de_Inventario
                 leer = comando.ExecuteReader();
                 if(leer.HasRows)
                 {
-                    MessageBox.Show("Bienvenido al Sistema de Inventario");
+                   
                     inventario inv =new inventario();
                     inv.Show();
                     return 1;
