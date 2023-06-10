@@ -59,8 +59,17 @@ namespace Sistema_control_de_Inventario
             {
                if(con.Conexion()==1)
                 {
+                    MessageBox.Show("USUARIO CORRECTO, BIENVENIDO");
                     this.Hide();
+                   
                 }
+               else
+                {
+                    MessageBox.Show("USUARIO INCORRECTO, INTENTE DE NUEVO");
+                    textBox1.Text = "";
+                    textBox2.Text = "";
+                }
+
             }
 
         }
