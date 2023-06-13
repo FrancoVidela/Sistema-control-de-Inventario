@@ -18,59 +18,17 @@ namespace Sistema_control_de_Inventario
             InitializeComponent();
         }
 
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
-
-        private void stockDeProductosToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
+     
 
         private void inventario_Load(object sender, EventArgs e)
         {
             MostrarDatos();
         }
 
-        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (MessageBox.Show("¿Desea Salir?", "Salir", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.Yes)
-            {
-                this.Close();
-            }
-        }
-
-        private void cerrarSesionToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (MessageBox.Show("¿Desea cerrar sesion?", "Salir", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.Yes)
-            {
-                MessageBox.Show("Sesion cerrada");
-                Login log = new Login();
-                this.Hide();
-                log.Show();
+     
 
 
-            }
-            else
-            {
-                MessageBox.Show("Error");
-            }
-
-
-
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
+      
         private bool mensajeMostrado = false;
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -120,10 +78,7 @@ namespace Sistema_control_de_Inventario
             }
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
+      
 
         private void MostrarDatos()
 
@@ -281,8 +236,7 @@ namespace Sistema_control_de_Inventario
                             command.Parameters.AddWithValue("@cantidad", Cantidad);
                             command.ExecuteNonQuery();
                         }
-
-
+   
                         Id = "";
                         Nombre = "";
                         Cantidad = "";
@@ -300,6 +254,16 @@ namespace Sistema_control_de_Inventario
             {
                 MessageBox.Show("Por favor, complete todos los campos.");
             }
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

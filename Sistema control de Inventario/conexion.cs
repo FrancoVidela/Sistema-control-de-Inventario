@@ -44,8 +44,8 @@ namespace Sistema_control_de_Inventario
                 if(leer.HasRows)
                 {
                    
-                    inventario inv =new inventario();
-                    inv.Show();
+                    //inventario inv =new inventario();
+                    //inv.Show();
                     return 1;
                 }
                 else

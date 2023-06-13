@@ -25,30 +25,10 @@ namespace Sistema_control_de_Inventario
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
 
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Login_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void button1_Click_1(object sender, EventArgs e)
         {
             string user = textBox1.Text;
-            string pd = textBox2.Text;
+            string pd = txtContraseña.Text;
             conexion con = new conexion(user,pd);
             if (string.IsNullOrEmpty(user) && string.IsNullOrEmpty(pd))
             {
@@ -59,54 +39,22 @@ namespace Sistema_control_de_Inventario
             {
                if(con.Conexion()==1)
                 {
+                   
                     MessageBox.Show("USUARIO CORRECTO, BIENVENIDO");
                     this.Hide();
+                    Principal ps = new Principal();
+                    ps.Show();
                    
                 }
                else
                 {
                     MessageBox.Show("USUARIO INCORRECTO, INTENTE DE NUEVO");
                     textBox1.Text = "";
-                    textBox2.Text = "";
+                    txtContraseña.Text = "";
                 }
 
             }
 
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox2_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_Leave(object sender, EventArgs e)
-        {
-          
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)
@@ -139,6 +87,37 @@ namespace Sistema_control_de_Inventario
         private void pictureBox3_MouseLeave(object sender, EventArgs e)
         {
             this.Cursor = Cursors.Default;
+        }
+
+        private bool mostrarContrasena = false;
+
+        private void btnMostrarCon_Click(object sender, EventArgs e)
+        {
+            if (mostrarContrasena)
+            {
+                txtContraseña.UseSystemPasswordChar = true;
+                btnMostrarCon.Image = Properties.Resources.ocultar; 
+            }
+            else
+            {
+                txtContraseña.UseSystemPasswordChar = false;
+
+                btnMostrarCon.Image = Properties.Resources.mostrar; 
+            }
+
+            mostrarContrasena = !mostrarContrasena; 
+        }
+
+        private void txtContraseña_TextChanged(object sender, EventArgs e)
+        {
+            if (txtContraseña.Text.Length>0)
+            {
+                btnMostrarCon.Visible = true;
+            }
+            else
+            {
+                btnMostrarCon.Visible = false;
+            }
         }
     }
 }
