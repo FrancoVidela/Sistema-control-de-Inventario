@@ -50,7 +50,7 @@ namespace Sistema_control_de_Inventario
                 }
                 else
                 {
-                    MessageBox.Show("Error");
+                    MessageBox.Show("USUARIO O CONTRASEÑA INCORRECTOS, INTENTE DE NUEVO");
                     return 0;
                 }
             }

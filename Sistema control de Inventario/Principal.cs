@@ -25,22 +25,6 @@ namespace Sistema_control_de_Inventario
         private extern static void SendMessage(System.IntPtr hwnd, int wmsg ,int wparam,int lparam);
 
 
-        private void panelTitle_MouseDown(object sender, MouseEventArgs e)
-        {
-            ReleaseCapture();
-            SendMessage(this.Handle, 0x112, 0xf012, 0);
-        }
-
-        private void PanelContenedor_Paint(object sender, PaintEventArgs e)
-        {
-            
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void button4_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("¿Desea cerrar sesion?", "Salir", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.Yes)
@@ -58,13 +42,6 @@ namespace Sistema_control_de_Inventario
             }
 
         }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-     
 
 
         private void AbrirForm(object Formhijo)
@@ -84,10 +61,6 @@ namespace Sistema_control_de_Inventario
             AbrirForm(new inventario());
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
 
         private void btnMen_Click(object sender, EventArgs e)
         {
@@ -125,6 +98,17 @@ namespace Sistema_control_de_Inventario
             this.WindowState = FormWindowState.Normal;
             Restaurar.Visible = false;
             Maximizar.Visible = true;
+        }
+
+        private void MenuVertical_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void BarraTitulo_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
     }
 }

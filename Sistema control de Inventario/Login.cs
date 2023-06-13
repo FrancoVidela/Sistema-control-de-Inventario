@@ -48,7 +48,7 @@ namespace Sistema_control_de_Inventario
                 }
                else
                 {
-                    MessageBox.Show("USUARIO INCORRECTO, INTENTE DE NUEVO");
+                   
                     textBox1.Text = "";
                     txtContraseña.Text = "";
                 }
