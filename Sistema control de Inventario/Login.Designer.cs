@@ -42,8 +42,8 @@
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.label = new System.Windows.Forms.PictureBox();
+            this.pbUsuario = new System.Windows.Forms.PictureBox();
+            this.pbContraseña = new System.Windows.Forms.PictureBox();
             this.btnMostrarCon = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -51,8 +51,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.label)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbUsuario)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbContraseña)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMostrarCon)).BeginInit();
             this.SuspendLayout();
             // 
@@ -107,7 +107,7 @@
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBox1.ForeColor = System.Drawing.Color.White;
-            this.textBox1.Location = new System.Drawing.Point(457, 173);
+            this.textBox1.Location = new System.Drawing.Point(457, 170);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(267, 28);
             this.textBox1.TabIndex = 8;
@@ -118,7 +118,7 @@
             this.txtContraseña.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtContraseña.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtContraseña.ForeColor = System.Drawing.Color.White;
-            this.txtContraseña.Location = new System.Drawing.Point(457, 306);
+            this.txtContraseña.Location = new System.Drawing.Point(457, 304);
             this.txtContraseña.Name = "txtContraseña";
             this.txtContraseña.Size = new System.Drawing.Size(267, 28);
             this.txtContraseña.TabIndex = 9;
@@ -209,27 +209,27 @@
             this.pictureBox7.TabIndex = 17;
             this.pictureBox7.TabStop = false;
             // 
-            // pictureBox8
+            // pbUsuario
             // 
-            this.pictureBox8.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
-            this.pictureBox8.Location = new System.Drawing.Point(442, 160);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(295, 50);
-            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox8.TabIndex = 18;
-            this.pictureBox8.TabStop = false;
+            this.pbUsuario.BackColor = System.Drawing.Color.Transparent;
+            this.pbUsuario.Image = global::Sistema_control_de_Inventario.Properties.Resources.correcto;
+            this.pbUsuario.Location = new System.Drawing.Point(442, 160);
+            this.pbUsuario.Name = "pbUsuario";
+            this.pbUsuario.Size = new System.Drawing.Size(295, 50);
+            this.pbUsuario.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbUsuario.TabIndex = 18;
+            this.pbUsuario.TabStop = false;
             // 
-            // label
+            // pbContraseña
             // 
-            this.label.BackColor = System.Drawing.Color.Transparent;
-            this.label.Image = ((System.Drawing.Image)(resources.GetObject("label.Image")));
-            this.label.Location = new System.Drawing.Point(443, 294);
-            this.label.Name = "label";
-            this.label.Size = new System.Drawing.Size(294, 50);
-            this.label.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.label.TabIndex = 19;
-            this.label.TabStop = false;
+            this.pbContraseña.BackColor = System.Drawing.Color.Transparent;
+            this.pbContraseña.Image = global::Sistema_control_de_Inventario.Properties.Resources.correcto;
+            this.pbContraseña.Location = new System.Drawing.Point(443, 294);
+            this.pbContraseña.Name = "pbContraseña";
+            this.pbContraseña.Size = new System.Drawing.Size(294, 50);
+            this.pbContraseña.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbContraseña.TabIndex = 19;
+            this.pbContraseña.TabStop = false;
             // 
             // btnMostrarCon
             // 
@@ -253,9 +253,9 @@
             this.ClientSize = new System.Drawing.Size(853, 511);
             this.Controls.Add(this.btnMostrarCon);
             this.Controls.Add(this.txtContraseña);
-            this.Controls.Add(this.label);
+            this.Controls.Add(this.pbContraseña);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.pictureBox8);
+            this.Controls.Add(this.pbUsuario);
             this.Controls.Add(this.pictureBox7);
             this.Controls.Add(this.pictureBox6);
             this.Controls.Add(this.pictureBox4);
@@ -277,8 +277,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.label)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbUsuario)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbContraseña)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMostrarCon)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -299,8 +299,8 @@
         private PictureBox pictureBox5;
         private PictureBox pictureBox6;
         private PictureBox pictureBox7;
-        private PictureBox pictureBox8;
-        private PictureBox label;
+        private PictureBox pbUsuario;
+        private PictureBox pbContraseña;
         private PictureBox btnMostrarCon;
     }
 }

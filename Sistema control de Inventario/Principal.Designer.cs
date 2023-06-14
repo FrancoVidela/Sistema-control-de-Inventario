@@ -100,9 +100,8 @@
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(250, 40);
             this.button5.TabIndex = 6;
-            this.button5.Text = "Venta";
+            this.button5.Text = "Ventas";
             this.button5.UseVisualStyleBackColor = true;
-        
             // 
             // button4
             // 
@@ -136,7 +135,6 @@
             this.button2.TabIndex = 3;
             this.button2.Text = "Informes";
             this.button2.UseVisualStyleBackColor = true;
-         
             // 
             // button1
             // 

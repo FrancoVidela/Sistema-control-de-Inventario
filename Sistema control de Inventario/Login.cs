@@ -51,6 +51,8 @@ namespace Sistema_control_de_Inventario
                    
                     textBox1.Text = "";
                     txtContraseña.Text = "";
+                    pbUsuario.Image = Properties.Resources.incorrecto;
+                    pbContraseña.Image = Properties.Resources.incorrecto;
                 }
 
             }
