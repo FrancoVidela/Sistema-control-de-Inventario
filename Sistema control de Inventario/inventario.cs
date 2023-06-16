@@ -23,6 +23,7 @@ namespace Sistema_control_de_Inventario
         private void inventario_Load(object sender, EventArgs e)
         {
             MostrarDatos();
+         
         }
 
      
@@ -35,9 +36,13 @@ namespace Sistema_control_de_Inventario
         {
             string textoBusqueda = textBox1.Text.ToLower(); // Obtener el texto de búsqueda
 
+            if (string.IsNullOrEmpty(textoBusqueda))
+            {
+                dataGridView1.ClearSelection(); // Deseleccionar todas las filas si el texto de búsqueda está vacío
+            }
+            else {
 
-
-            foreach (DataGridViewRow row in dataGridView1.Rows) // Recorrer todas las filas
+                foreach (DataGridViewRow row in dataGridView1.Rows) // Recorrer todas las filas
             {
 
 
@@ -75,6 +80,8 @@ namespace Sistema_control_de_Inventario
 
 
 
+
+            }
             }
         }
 
@@ -272,6 +279,11 @@ namespace Sistema_control_de_Inventario
         }
 
         private void groupBox1_Enter_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
