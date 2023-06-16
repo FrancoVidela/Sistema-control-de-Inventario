@@ -58,7 +58,9 @@ namespace Sistema_control_de_Inventario
         }
         private void btnProductos_Click(object sender, EventArgs e)
         {
-            AbrirForm(new inventario());
+            inventario inv = new inventario();
+            inv.FormClosed += new FormClosedEventHandler(MostraralcerrarForm);
+            AbrirForm(inv);
         }
 
 
@@ -78,24 +80,38 @@ namespace Sistema_control_de_Inventario
 
         private void Cerrar_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+
+            if (MessageBox.Show("¿Seguro de cerrar?", "Salir", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.Yes)
+            {
+                
+                Application.Exit();
+
+            }
+        
+            
         }
 
         private void Minimizar_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
         }
-
+        int LX;
+        int LY;
         private void Maximizar_Click(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Maximized;
+            //this.WindowState = FormWindowState.Maximized;
+            LX=this.Location.X; LY=this.Location.Y;
+            this.Size = Screen.PrimaryScreen.WorkingArea.Size;
+            this.Location= Screen.PrimaryScreen.WorkingArea.Location;
             Restaurar.Visible = true;
             Maximizar.Visible = false;
         }
 
         private void Restaurar_Click(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Normal;
+            //this.WindowState = FormWindowState.Normal;
+            this.Size = new Size(1300, 650);
+            this.Location = new Point(LX,LY) ;
             Restaurar.Visible = false;
             Maximizar.Visible = true;
         }
@@ -109,6 +125,26 @@ namespace Sistema_control_de_Inventario
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void Principal_Load(object sender, EventArgs e)
+        {
+            MostrarLogo();
+        }
+
+        private void btnInicio_Click(object sender, EventArgs e)
+        {
+          //  AbrirForm(new Inicio());
+        }
+
+        private void MostrarLogo()
+        {
+            AbrirForm(new Inicio());
+        }
+
+        private void MostraralcerrarForm(object sender, FormClosedEventArgs e)
+        {
+            MostrarLogo();
         }
     }
 }
