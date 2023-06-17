@@ -146,5 +146,12 @@ namespace Sistema_control_de_Inventario
         {
             MostrarLogo();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Proveedor pr= new Proveedor();
+            pr.FormClosed += new FormClosedEventHandler(MostraralcerrarForm);
+            AbrirForm(pr);
+        }
     }
 }

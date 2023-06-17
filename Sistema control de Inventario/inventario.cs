@@ -125,12 +125,7 @@ namespace Sistema_control_de_Inventario
             }
         }
 
-        private void proveedoresToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Proveedores prov = new Proveedores();
-            prov.Show();
-            this.Hide();
-        }
+    
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -263,29 +258,52 @@ namespace Sistema_control_de_Inventario
             }
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void label3_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
+            string servidor = "127.0.0.1";
+            string puerto = "3306";
+            string inventario = "root";
+            string clave = "";
+            string usuario;
+            string pass;
 
-        }
+            string connectionString = "server =" + servidor + ";port=" + puerto + ";user id=" + inventario + ";password=" + clave + ";database=inventario";
+            MySqlConnection connection = new MySqlConnection(connectionString);
 
-        private void groupBox1_Enter_1(object sender, EventArgs e)
-        {
+            using (MySqlConnection conexion = new MySqlConnection(connectionString))
+            {
+                conexion.Open();
 
-        }
+                foreach (DataGridViewRow fila in dataGridView1.Rows)
+                {
+                    string idProducto = fila.Cells["ID_Producto"].Value.ToString();
+                    string nombreProducto = fila.Cells["Nombre_Producto"].Value.ToString();
+                    string cantidadProducto = fila.Cells["Cantidad_Producto"].Value.ToString();
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
+                    // Ejecutar la actualización en la base de datos
+                    string consulta = "UPDATE productos SET Nombre_Producto = @nombre, Cantidad_Producto = @cantidad WHERE ID_Producto = @id";
+                    using (MySqlCommand comando = new MySqlCommand(consulta, conexion))
+                    {
+                        comando.Parameters.AddWithValue("@nombre", nombreProducto);
+                        comando.Parameters.AddWithValue("@cantidad", cantidadProducto);
+                        comando.Parameters.AddWithValue("@id", idProducto);
+                        comando.ExecuteNonQuery();
+                    }
+                }
 
+
+                MostrarDatos();
+
+                conexion.Close();
+
+                MessageBox.Show("Los registros se han actualizado correctamente.", "Actualización Existosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
     }
 }

@@ -11,43 +11,77 @@ using MySql.Data.MySqlClient;
 
 namespace Sistema_control_de_Inventario
 {
-    public partial class Proveedores : Form
+    public partial class Proveedor : Form
     {
-        public Proveedores()
+        public Proveedor()
         {
             InitializeComponent();
         }
 
-        private void cerrarSesionToolStripMenuItem_Click(object sender, EventArgs e)
+
+
+        private void inventario_Load(object sender, EventArgs e)
         {
-            if (MessageBox.Show("¿Desea cerrar sesion?", "Salir", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.Yes)
+            MostrarDatos();
+
+        }
+
+
+
+
+
+        private bool mensajeMostrado = false;
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            string textoBusqueda = textBox1.Text.ToLower(); // Obtener el texto de búsqueda
+
+            if (string.IsNullOrEmpty(textoBusqueda))
             {
-                MessageBox.Show("Sesion cerrada");
-                Login log = new Login();
-                this.Hide();
-                log.Show();
-
-
+                dataGridView1.ClearSelection(); // Deseleccionar todas las filas si el texto de búsqueda está vacío
             }
             else
             {
-                MessageBox.Show("Error");
+
+                foreach (DataGridViewRow row in dataGridView1.Rows) // Recorrer todas las filas
+                {
+
+
+
+                    string codigo = row.Cells["ID_Proveedores"].Value != null ? row.Cells["ID_Proveedores"].Value.ToString().ToLower() : "";
+                    string nombreCompleto = row.Cells["Nombre_Proveedor"].Value != null ? row.Cells["Nombre_Proveedor"].Value.ToString().ToLower() : "";
+
+
+
+                    if (codigo.IndexOf(textoBusqueda) == 0 || nombreCompleto.IndexOf(textoBusqueda) >= 0) // Buscar la coincidencia con el código o el nombre
+                    {
+                        row.Selected = true; // Seleccionar la fila que contiene el código o el nombre
+                        dataGridView1.FirstDisplayedScrollingRowIndex = row.Index; // Desplazarse hacia la fila seleccionada
+                    }
+                    else
+                    {
+                        row.Selected = false; // Deseleccionar la fila que no cumple con la búsqueda
+                    }
+
+
+
+
+                }
+                if (dataGridView1.SelectedRows.Count == 0 && !string.IsNullOrEmpty(textoBusqueda)) // Si no se encontraron coincidencias y hay una búsqueda en curso
+                {
+                    if (!mensajeMostrado)
+                    {
+                        MessageBox.Show("No se encontraron registros que coincidan con la búsqueda.", "Búsqueda", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        mensajeMostrado = true;
+                    }
+                    else
+                    {
+                        mensajeMostrado = false;
+                    }
+                }
             }
-        }
-
-        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (MessageBox.Show("¿Desea Salir?", "Salir", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.Yes)
-            {
-                this.Close();
-            }
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
 
         }
-
 
         private void MostrarDatos()
 
@@ -87,61 +121,7 @@ namespace Sistema_control_de_Inventario
             }
         }
 
-        private void Proveedores_Load(object sender, EventArgs e)
-        {
-            MostrarDatos();
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private bool mensajeMostrado = false;
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-            string textoBusqueda = textBox1.Text.ToLower(); // Obtener el texto de búsqueda
-
-
-
-            foreach (DataGridViewRow row in dataGridView1.Rows) // Recorrer todas las filas
-            {
-
-
-
-                string codigo = row.Cells["ID_Proveedores"].Value != null ? row.Cells["ID_Proveedores"].Value.ToString().ToLower() : "";
-                string nombreCompleto = row.Cells["Nombre_Proveedor"].Value != null ? row.Cells["Nombre_Proveedor"].Value.ToString().ToLower() : "";
-
-
-
-                if (codigo.IndexOf(textoBusqueda) == 0 || nombreCompleto.IndexOf(textoBusqueda) >= 0) // Buscar la coincidencia con el código o el nombre
-                {
-                    row.Selected = true; // Seleccionar la fila que contiene el código o el nombre
-                    dataGridView1.FirstDisplayedScrollingRowIndex = row.Index; // Desplazarse hacia la fila seleccionada
-                }
-                else
-                {
-                    row.Selected = false; // Deseleccionar la fila que no cumple con la búsqueda
-                }
-
-
-
-
-            }
-            if (dataGridView1.SelectedRows.Count == 0 && !string.IsNullOrEmpty(textoBusqueda)) // Si no se encontraron coincidencias y hay una búsqueda en curso
-            {
-                if (!mensajeMostrado)
-                {
-                    MessageBox.Show("No se encontraron registros que coincidan con la búsqueda.", "Búsqueda", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    mensajeMostrado = true;
-                }
-                else
-                {
-                    mensajeMostrado = false;
-                }
-            }
-        }
+     
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -182,6 +162,7 @@ namespace Sistema_control_de_Inventario
                     }
                 }
             }
+
         }
 
         private void CargarDatos()
@@ -274,6 +255,82 @@ namespace Sistema_control_de_Inventario
                 MessageBox.Show("Por favor, complete todos los campos.");
             }
 
+        }
+   
+
+
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string servidor = "127.0.0.1";
+            string puerto = "3306";
+            string inventario = "root";
+            string clave = "";
+            string usuario;
+            string pass;
+
+            string connectionString = "server =" + servidor + ";port=" + puerto + ";user id=" + inventario + ";password=" + clave + ";database=inventario";
+            MySqlConnection connection = new MySqlConnection(connectionString);
+
+            using (MySqlConnection conexion = new MySqlConnection(connectionString))
+            {
+                conexion.Open();
+
+                foreach (DataGridViewRow fila in dataGridView1.Rows)
+                {
+                    string idProveedor = fila.Cells["ID_Proveedores"].Value.ToString();
+                    string nombreProveedor = fila.Cells["Nombre_Proveedor"].Value.ToString();
+                    string rutproveedor = fila.Cells["Rut_Proveedor"].Value.ToString();
+                    string direccionproveedor = fila.Cells["Direccion_Proveedor"].Value.ToString();
+                    string correoproveedor = fila.Cells["Correo_Proveedor"].Value.ToString();
+                    string telefonoproveedor = fila.Cells["Telefono_Proveedor"].Value.ToString();
+
+                    // Ejecutar la actualización en la base de datos
+                    string consulta = "UPDATE proveedores SET Nombre_Proveedor = @nombre, Rut_Proveedor = @rut, Direccion_Proveedor = @direccion, Correo_Proveedor = @correo,Telefono_Proveedor = @fono WHERE ID_Proveedores = @id";
+                    using (MySqlCommand comando = new MySqlCommand(consulta, conexion))
+                    {
+                        comando.Parameters.AddWithValue("@nombre", nombreProveedor);
+                        comando.Parameters.AddWithValue("@rut", rutproveedor);
+                        comando.Parameters.AddWithValue("@direccion", direccionproveedor);
+                        comando.Parameters.AddWithValue("@correo", correoproveedor);
+                        comando.Parameters.AddWithValue("@fono", telefonoproveedor);
+                        comando.Parameters.AddWithValue("@id", idProveedor);
+                        comando.ExecuteNonQuery();
+                    }
+                }
+
+
+                MostrarDatos();
+
+                conexion.Close();
+
+                MessageBox.Show("Los registros se han actualizado correctamente.", "Actualización Existosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
     }
 }
