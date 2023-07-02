@@ -43,14 +43,14 @@ namespace Sistema_control_de_Inventario
                 leer = comando.ExecuteReader();
                 if(leer.HasRows)
                 {
-                    MessageBox.Show("Bienvenido al Sistema de Inventario");
-                    inventario inv =new inventario();
-                    inv.Show();
+                   
+                    //inventario inv =new inventario();
+                    //inv.Show();
                     return 1;
                 }
                 else
                 {
-                    MessageBox.Show("Error");
+                    MessageBox.Show("USUARIO O CONTRASEÑA INCORRECTOS, INTENTE DE NUEVO");
                     return 0;
                 }
             }
@@ -78,5 +78,37 @@ namespace Sistema_control_de_Inventario
 
 
         }
+        public string ObtenerTipoCuenta(string usuario)
+        {
+            string tipoCuenta = string.Empty;
+            string cadena = "server =" + servidor + ";port=" + puerto + ";user id=" + inventario + ";password=" + clave + ";database=inventario";
+            string consulta = "SELECT tipocuenta FROM login WHERE usuario='" + usuario + "'";
+            MySqlConnection conectar = new MySqlConnection(cadena);
+            MySqlCommand comando = new MySqlCommand(consulta, conectar);
+            comando.CommandTimeout = 60;
+            MySqlDataReader leer;
+
+            try
+            {
+                conectar.Open();
+                leer = comando.ExecuteReader();
+
+                if (leer.Read())
+                {
+                    tipoCuenta = leer.GetString("tipocuenta");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conectar.Close();
+            }
+
+            return tipoCuenta;
+        }
+
     }
 }
