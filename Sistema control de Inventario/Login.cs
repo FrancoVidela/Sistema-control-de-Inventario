@@ -51,7 +51,7 @@ namespace Sistema_control_de_Inventario
                 MessageBox.Show("USUARIO CORRECTO, BIENVENIDO");
                     this.Hide();
                     string tipoCuenta = con.ObtenerTipoCuenta(user);
-                    if (tipoCuenta == "administrador")
+                    if (tipoCuenta == "admin")
                     {
                         Principal adminForm = new Principal();
                         adminForm.Show();

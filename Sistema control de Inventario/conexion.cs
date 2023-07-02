@@ -82,7 +82,7 @@ namespace Sistema_control_de_Inventario
         {
             string tipoCuenta = string.Empty;
             string cadena = "server =" + servidor + ";port=" + puerto + ";user id=" + inventario + ";password=" + clave + ";database=inventario";
-            string consulta = "SELECT tipocuenta FROM login WHERE usuario='" + usuario + "'";
+            string consulta = "SELECT nombre_tipo FROM login WHERE usuario='" + usuario + "'";
             MySqlConnection conectar = new MySqlConnection(cadena);
             MySqlCommand comando = new MySqlCommand(consulta, conectar);
             comando.CommandTimeout = 60;
@@ -95,7 +95,7 @@ namespace Sistema_control_de_Inventario
 
                 if (leer.Read())
                 {
-                    tipoCuenta = leer.GetString("tipocuenta");
+                    tipoCuenta = leer.GetString("nombre_tipo");
                 }
             }
             catch (Exception ex)
