@@ -8,13 +8,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
-using MySql.Data.MySqlClient;
 
 namespace Sistema_control_de_Inventario
 {
-    public partial class Principal : Form
+    public partial class Principal2 : Form
     {
-        public Principal()
+        public Principal2()
         {
             InitializeComponent();
         }
@@ -153,63 +152,9 @@ namespace Sistema_control_de_Inventario
 
         private void btnCrearUsuario_Click(object sender, EventArgs e)
         {
-            //boton agregar
-            string servidor = "127.0.0.1";
-            string puerto = "3306";
-            string inventario = "root";
-            string clave = "";
-
-
-
-            string usuario = Microsoft.VisualBasic.Interaction.InputBox("Ingrese el nombre de usuario:", "Agregar dato");
-            string contraseña = Microsoft.VisualBasic.Interaction.InputBox("Ingrese la constraseña del usuario:", "Agregar dato");
-
-
-
-            if (!string.IsNullOrEmpty(usuario) && !string.IsNullOrEmpty(contraseña))
-            {
-
-                try
-                {
-                    string connectionString = "server =" + servidor + ";port=" + puerto + ";user id=" + inventario + ";password=" + clave + ";database=inventario";
-                    using (MySqlConnection connection = new MySqlConnection(connectionString))
-                    {
-                        connection.Open();
-                        string consulta = "INSERT INTO login (usuario, contraseña) VALUES (@usser, @cont)";
-
-                        {
-
-                            MySqlCommand command = new MySqlCommand(consulta, connection);
-                            command.Parameters.AddWithValue("@usser", usuario);
-                            command.Parameters.AddWithValue("@cont", contraseña);
-
-
-                            command.ExecuteNonQuery();
-                        }
-
-                        usuario = "";
-                        contraseña = "";
-
-
-
-                        MessageBox.Show("Usuario creado exitosamente.");
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error al agregar el usuario: " + ex.Message);
-                }
-            }
-            else
-            {
-                MessageBox.Show("Por favor, complete todos los campos.");
-            }
+            
         }
 
-        private void MostrarBotonCrearCuenta(bool esAdministrador)
-        {
-            btnCrearUsuario.Visible = esAdministrador;
-        }
-
+      
     }
 }

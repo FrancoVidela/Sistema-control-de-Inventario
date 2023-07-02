@@ -1,6 +1,6 @@
 ﻿namespace Sistema_control_de_Inventario
 {
-    partial class Principal
+    partial class Principal2
     {
         /// <summary>
         /// Required designer variable.
@@ -28,9 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Principal));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Principal2));
             this.MenuVertical = new System.Windows.Forms.Panel();
-            this.btnCrearUsuario = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -57,7 +56,6 @@
             // MenuVertical
             // 
             this.MenuVertical.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.MenuVertical.Controls.Add(this.btnCrearUsuario);
             this.MenuVertical.Controls.Add(this.button5);
             this.MenuVertical.Controls.Add(this.button4);
             this.MenuVertical.Controls.Add(this.button2);
@@ -70,24 +68,6 @@
             this.MenuVertical.Size = new System.Drawing.Size(250, 650);
             this.MenuVertical.TabIndex = 0;
             this.MenuVertical.Paint += new System.Windows.Forms.PaintEventHandler(this.MenuVertical_Paint);
-            // 
-            // btnCrearUsuario
-            // 
-            this.btnCrearUsuario.BackColor = System.Drawing.Color.Firebrick;
-            this.btnCrearUsuario.FlatAppearance.BorderSize = 0;
-            this.btnCrearUsuario.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.btnCrearUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCrearUsuario.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnCrearUsuario.ForeColor = System.Drawing.Color.White;
-            this.btnCrearUsuario.Image = ((System.Drawing.Image)(resources.GetObject("btnCrearUsuario.Image")));
-            this.btnCrearUsuario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCrearUsuario.Location = new System.Drawing.Point(0, 355);
-            this.btnCrearUsuario.Name = "btnCrearUsuario";
-            this.btnCrearUsuario.Size = new System.Drawing.Size(250, 73);
-            this.btnCrearUsuario.TabIndex = 7;
-            this.btnCrearUsuario.Text = "Crear\r\nUsuario";
-            this.btnCrearUsuario.UseVisualStyleBackColor = false;
-            this.btnCrearUsuario.Click += new System.EventHandler(this.btnCrearUsuario_Click);
             // 
             // button5
             // 
@@ -275,7 +255,7 @@
             this.PanelContenedor.Size = new System.Drawing.Size(1050, 600);
             this.PanelContenedor.TabIndex = 2;
             // 
-            // Principal
+            // Principal2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -284,7 +264,7 @@
             this.Controls.Add(this.BarraTitulo);
             this.Controls.Add(this.MenuVertical);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Principal";
+            this.Name = "Principal2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Principal";
             this.Load += new System.EventHandler(this.Principal_Load);
@@ -309,7 +289,6 @@
         private Button button1;
         private Button button4;
         private Button button5;
-        private Button btnCrearUsuario;
         private Panel BarraTitulo;
         private PictureBox btnMen;
         private Panel PanelContenedor;

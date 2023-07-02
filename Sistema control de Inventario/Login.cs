@@ -26,7 +26,13 @@ namespace Sistema_control_de_Inventario
         private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
 
         private void button1_Click_1(object sender, EventArgs e)
+
         {
+            string servidor = "127.0.0.1";
+            string puerto = "3306";
+            string inventario = "root";
+            string clave = "";
+
             string user = textBox1.Text;
             string pd = txtContraseña.Text;
             conexion con = new conexion(user,pd);
@@ -37,14 +43,24 @@ namespace Sistema_control_de_Inventario
             }
             else
             {
-               if(con.Conexion()==1)
-                {
-                   
-                    MessageBox.Show("USUARIO CORRECTO, BIENVENIDO");
+                int resultado = con.Conexion();
+               if(resultado==1)
+                {       
+                  
+                
+                MessageBox.Show("USUARIO CORRECTO, BIENVENIDO");
                     this.Hide();
-                    Principal ps = new Principal();
-                    ps.Show();
-                   
+                    string tipoCuenta = con.ObtenerTipoCuenta(user);
+                    if (tipoCuenta == "administrador")
+                    {
+                        Principal adminForm = new Principal();
+                        adminForm.Show();
+                    }
+                    else
+                    {
+                        Principal2 usuarioForm = new Principal2();
+                        usuarioForm.Show();
+                    }
                 }
                else
                 {
@@ -55,9 +71,13 @@ namespace Sistema_control_de_Inventario
                     pbContraseña.Image = Properties.Resources.incorrecto;
                 }
 
+
             }
 
+
         }
+
+
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {

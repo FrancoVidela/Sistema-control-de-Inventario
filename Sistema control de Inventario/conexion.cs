@@ -78,5 +78,37 @@ namespace Sistema_control_de_Inventario
 
 
         }
+        public string ObtenerTipoCuenta(string usuario)
+        {
+            string tipoCuenta = string.Empty;
+            string cadena = "server =" + servidor + ";port=" + puerto + ";user id=" + inventario + ";password=" + clave + ";database=inventario";
+            string consulta = "SELECT tipocuenta FROM login WHERE usuario='" + usuario + "'";
+            MySqlConnection conectar = new MySqlConnection(cadena);
+            MySqlCommand comando = new MySqlCommand(consulta, conectar);
+            comando.CommandTimeout = 60;
+            MySqlDataReader leer;
+
+            try
+            {
+                conectar.Open();
+                leer = comando.ExecuteReader();
+
+                if (leer.Read())
+                {
+                    tipoCuenta = leer.GetString("tipocuenta");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conectar.Close();
+            }
+
+            return tipoCuenta;
+        }
+
     }
 }
