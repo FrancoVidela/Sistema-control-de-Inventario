@@ -17,6 +17,7 @@ namespace Sistema_control_de_Inventario
         public Principal()
         {
             InitializeComponent();
+            panelInformes.Visible = false;
         }
 
         [DllImport("user32.Dll", EntryPoint = "ReleaseCapture")]
@@ -55,6 +56,8 @@ namespace Sistema_control_de_Inventario
         }
         private void btnProductos_Click(object sender, EventArgs e)
         {
+            panelInformes.Visible = false;
+            
             inventario inv = new inventario();
             inv.FormClosed += new FormClosedEventHandler(MostraralcerrarForm);
             AbrirForm(inv);
@@ -146,6 +149,7 @@ namespace Sistema_control_de_Inventario
 
         private void button1_Click(object sender, EventArgs e)
         {
+            panelInformes.Visible = false;
             Proveedor pr= new Proveedor();
             pr.FormClosed += new FormClosedEventHandler(MostraralcerrarForm);
             AbrirForm(pr);
@@ -153,7 +157,7 @@ namespace Sistema_control_de_Inventario
 
         private void btnCrearUsuario_Click(object sender, EventArgs e)
         {
-            //boton agregar
+            panelInformes.Visible = false;
             string servidor = "127.0.0.1";
             string puerto = "3306";
             string inventario = "root";
@@ -211,5 +215,16 @@ namespace Sistema_control_de_Inventario
             btnCrearUsuario.Visible = esAdministrador;
         }
 
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            panelInformes.Visible = !panelInformes.Visible;
+        }
+
+        
     }
 }

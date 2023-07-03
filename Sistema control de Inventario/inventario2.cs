@@ -11,9 +11,9 @@ using MySql.Data.MySqlClient;
 
 namespace Sistema_control_de_Inventario
 {
-    public partial class inventario : Form
+    public partial class inventario2 : Form
     {
-        public inventario()
+        public inventario2()
         {
             InitializeComponent();
         }
@@ -304,6 +304,11 @@ namespace Sistema_control_de_Inventario
 
                 MessageBox.Show("Los registros se han actualizado correctamente.", "Actualización Existosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

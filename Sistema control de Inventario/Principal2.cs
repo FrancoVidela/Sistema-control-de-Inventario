@@ -16,13 +16,14 @@ namespace Sistema_control_de_Inventario
         public Principal2()
         {
             InitializeComponent();
+            panelInformes.Visible= false;
         }
 
         [DllImport("user32.Dll", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
 
         [DllImport("user32.Dll", EntryPoint = "SendMessage")]
-        private extern static void SendMessage(System.IntPtr hwnd, int wmsg ,int wparam,int lparam);
+        private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
 
 
         private void button4_Click(object sender, EventArgs e)
@@ -54,9 +55,12 @@ namespace Sistema_control_de_Inventario
         }
         private void btnProductos_Click(object sender, EventArgs e)
         {
-            inventario inv = new inventario();
+            panelInformes.Visible = false;
+
+            inventario2 inv = new inventario2();
             inv.FormClosed += new FormClosedEventHandler(MostraralcerrarForm);
             AbrirForm(inv);
+            
         }
 
 
@@ -79,12 +83,12 @@ namespace Sistema_control_de_Inventario
 
             if (MessageBox.Show("¿Seguro de cerrar?", "Salir", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.Yes)
             {
-                
+
                 Application.Exit();
 
             }
-        
-            
+
+
         }
 
         private void Minimizar_Click(object sender, EventArgs e)
@@ -96,9 +100,9 @@ namespace Sistema_control_de_Inventario
         private void Maximizar_Click(object sender, EventArgs e)
         {
             //this.WindowState = FormWindowState.Maximized;
-            LX=this.Location.X; LY=this.Location.Y;
+            LX = this.Location.X; LY = this.Location.Y;
             this.Size = Screen.PrimaryScreen.WorkingArea.Size;
-            this.Location= Screen.PrimaryScreen.WorkingArea.Location;
+            this.Location = Screen.PrimaryScreen.WorkingArea.Location;
             Restaurar.Visible = true;
             Maximizar.Visible = false;
         }
@@ -107,14 +111,9 @@ namespace Sistema_control_de_Inventario
         {
             //this.WindowState = FormWindowState.Normal;
             this.Size = new Size(1300, 650);
-            this.Location = new Point(LX,LY) ;
+            this.Location = new Point(LX, LY);
             Restaurar.Visible = false;
             Maximizar.Visible = true;
-        }
-
-        private void MenuVertical_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         private void BarraTitulo_MouseDown(object sender, MouseEventArgs e)
@@ -130,12 +129,12 @@ namespace Sistema_control_de_Inventario
 
         private void btnInicio_Click(object sender, EventArgs e)
         {
-          //  AbrirForm(new Inicio());
+            //  AbrirForm(new Inicio());
         }
 
         private void MostrarLogo()
         {
-            AbrirForm(new Inicio());
+            AbrirForm(new Inicio2());
         }
 
         private void MostraralcerrarForm(object sender, FormClosedEventArgs e)
@@ -145,16 +144,32 @@ namespace Sistema_control_de_Inventario
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Proveedor pr= new Proveedor();
+            panelInformes.Visible = false;
+            Proveedor2 pr = new Proveedor2();
             pr.FormClosed += new FormClosedEventHandler(MostraralcerrarForm);
             AbrirForm(pr);
-        }
-
-        private void btnCrearUsuario_Click(object sender, EventArgs e)
-        {
             
         }
 
-      
+        private void button5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnInformes_Click(object sender, EventArgs e)
+        {
+            panelInformes.Visible = !panelInformes.Visible;
+            
+        }
+
+        private void PanelContenedor_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void MenuVertical_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

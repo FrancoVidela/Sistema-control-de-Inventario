@@ -15,7 +15,16 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Inicio2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="inventario2.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Principal2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Proveedor2.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Proveedor.cs">
