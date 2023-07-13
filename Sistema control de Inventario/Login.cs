@@ -35,7 +35,7 @@ namespace Sistema_control_de_Inventario
 
             string user = textBox1.Text;
             string pd = txtContraseña.Text;
-            conexion con = new conexion(user,pd);
+            conexion con = new conexion(user, pd);
             if (string.IsNullOrEmpty(user) && string.IsNullOrEmpty(pd))
             {
                 MessageBox.Show("Los datos estan vacios");
@@ -44,11 +44,11 @@ namespace Sistema_control_de_Inventario
             else
             {
                 int resultado = con.Conexion();
-               if(resultado==1)
-                {       
-                  
-                
-                MessageBox.Show("USUARIO CORRECTO, BIENVENIDO");
+                if (resultado == 1)
+                {
+
+
+                    MessageBox.Show("USUARIO CORRECTO, BIENVENIDO");
                     this.Hide();
                     string tipoCuenta = con.ObtenerTipoCuenta(user);
                     if (tipoCuenta == "administrador")
@@ -62,9 +62,9 @@ namespace Sistema_control_de_Inventario
                         usuarioForm.Show();
                     }
                 }
-               else
+                else
                 {
-                   
+
                     textBox1.Text = "";
                     txtContraseña.Text = "";
                     pbUsuario.Image = Properties.Resources.incorrecto;
@@ -86,7 +86,7 @@ namespace Sistema_control_de_Inventario
 
         private void pictureBox4_Click(object sender, EventArgs e)
         {
-            this.WindowState= FormWindowState.Minimized;
+            this.WindowState = FormWindowState.Minimized;
         }
 
         private void Login_MouseDown(object sender, MouseEventArgs e)
@@ -118,21 +118,21 @@ namespace Sistema_control_de_Inventario
             if (mostrarContrasena)
             {
                 txtContraseña.UseSystemPasswordChar = true;
-                btnMostrarCon.Image = Properties.Resources.ocultar; 
+                btnMostrarCon.Image = Properties.Resources.ocultar;
             }
             else
             {
                 txtContraseña.UseSystemPasswordChar = false;
 
-                btnMostrarCon.Image = Properties.Resources.mostrar; 
+                btnMostrarCon.Image = Properties.Resources.mostrar;
             }
 
-            mostrarContrasena = !mostrarContrasena; 
+            mostrarContrasena = !mostrarContrasena;
         }
 
         private void txtContraseña_TextChanged(object sender, EventArgs e)
         {
-            if (txtContraseña.Text.Length>0)
+            if (txtContraseña.Text.Length > 0)
             {
                 btnMostrarCon.Visible = true;
             }

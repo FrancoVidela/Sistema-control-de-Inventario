@@ -30,9 +30,11 @@ namespace Sistema_control_de_Inventario
         {
             if (MessageBox.Show("¿Desea cerrar sesion?", "Salir", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.Yes)
             {
-                MessageBox.Show("Sesion cerrada");
+                
                 Login log = new Login();
+
                 this.Hide();
+                MessageBox.Show("Sesion cerrada");
                 log.Show();
 
 
@@ -53,8 +55,24 @@ namespace Sistema_control_de_Inventario
             fh.Show();
 
         }
+        private Button botonSeleccionado;
+        private Color colorPredeterminado = Color.FromArgb(11, 7, 17);
+        private Color colorSeleccionado = Color.MediumSlateBlue;
+        private void CambiarColorBotonSeleccionado(Button boton)
+        {
+            if (botonSeleccionado != null)
+            {
+
+                botonSeleccionado.BackColor = colorPredeterminado;
+            }
+
+            boton.BackColor = colorSeleccionado;
+            botonSeleccionado = boton;
+        }
         private void btnProductos_Click(object sender, EventArgs e)
         {
+            Button boton = (Button)sender;
+            CambiarColorBotonSeleccionado(boton);
             panelInformes.Visible = false;
 
             inventario2 inv = new inventario2();
@@ -144,6 +162,8 @@ namespace Sistema_control_de_Inventario
 
         private void button1_Click(object sender, EventArgs e)
         {
+            Button boton = (Button)sender;
+            CambiarColorBotonSeleccionado(boton);
             panelInformes.Visible = false;
             Proveedor2 pr = new Proveedor2();
             pr.FormClosed += new FormClosedEventHandler(MostraralcerrarForm);
@@ -158,6 +178,8 @@ namespace Sistema_control_de_Inventario
 
         private void btnInformes_Click(object sender, EventArgs e)
         {
+            Button boton = (Button)sender;
+            CambiarColorBotonSeleccionado(boton);
             panelInformes.Visible = !panelInformes.Visible;
             
         }

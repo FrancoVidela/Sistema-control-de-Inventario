@@ -29,260 +29,260 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.txtContraseña = new System.Windows.Forms.TextBox();
-            this.btniniciar = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.pbUsuario = new System.Windows.Forms.PictureBox();
-            this.pbContraseña = new System.Windows.Forms.PictureBox();
-            this.btnMostrarCon = new System.Windows.Forms.PictureBox();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbUsuario)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbContraseña)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMostrarCon)).BeginInit();
-            this.SuspendLayout();
+            label1 = new Label();
+            label2 = new Label();
+            label3 = new Label();
+            label4 = new Label();
+            textBox1 = new TextBox();
+            txtContraseña = new TextBox();
+            btniniciar = new Button();
+            panel1 = new Panel();
+            pictureBox5 = new PictureBox();
+            pictureBox3 = new PictureBox();
+            pictureBox4 = new PictureBox();
+            pictureBox6 = new PictureBox();
+            pictureBox7 = new PictureBox();
+            pbUsuario = new PictureBox();
+            pbContraseña = new PictureBox();
+            btnMostrarCon = new PictureBox();
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbUsuario).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbContraseña).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)btnMostrarCon).BeginInit();
+            SuspendLayout();
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(860, 165);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 29);
-            this.label1.TabIndex = 2;
+            label1.AutoSize = true;
+            label1.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Location = new Point(860, 165);
+            label1.Name = "label1";
+            label1.Size = new Size(0, 29);
+            label1.TabIndex = 2;
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.label2.Font = new System.Drawing.Font("Bahnschrift Condensed", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.label2.Location = new System.Drawing.Point(457, 27);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(221, 60);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "BIENVENIDO!";
+            label2.AutoSize = true;
+            label2.BackColor = Color.FromArgb(34, 36, 49);
+            label2.Font = new Font("Bahnschrift Condensed", 25F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.ForeColor = Color.FromArgb(0, 122, 204);
+            label2.Location = new Point(457, 27);
+            label2.Name = "label2";
+            label2.Size = new Size(221, 60);
+            label2.TabIndex = 3;
+            label2.Text = "BIENVENIDO!";
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.label3.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(361, 111);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(126, 32);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "USUARIO:";
+            label3.AutoSize = true;
+            label3.BackColor = Color.FromArgb(34, 36, 49);
+            label3.Font = new Font("Cascadia Code", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.ForeColor = Color.White;
+            label3.Location = new Point(361, 111);
+            label3.Name = "label3";
+            label3.Size = new Size(126, 32);
+            label3.TabIndex = 4;
+            label3.Text = "USUARIO:";
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.label4.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(361, 248);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(168, 32);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "CONTRASEÑA:";
+            label4.AutoSize = true;
+            label4.BackColor = Color.FromArgb(34, 36, 49);
+            label4.Font = new Font("Cascadia Code", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.ForeColor = Color.White;
+            label4.Location = new Point(361, 248);
+            label4.Name = "label4";
+            label4.Size = new Size(168, 32);
+            label4.TabIndex = 5;
+            label4.Text = "CONTRASEÑA:";
             // 
             // textBox1
             // 
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(41)))), ((int)(((byte)(86)))));
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox1.ForeColor = System.Drawing.Color.White;
-            this.textBox1.Location = new System.Drawing.Point(457, 170);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(267, 28);
-            this.textBox1.TabIndex = 8;
+            textBox1.BackColor = Color.FromArgb(28, 41, 86);
+            textBox1.BorderStyle = BorderStyle.None;
+            textBox1.Font = new Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            textBox1.ForeColor = Color.White;
+            textBox1.Location = new Point(457, 170);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(267, 28);
+            textBox1.TabIndex = 8;
             // 
             // txtContraseña
             // 
-            this.txtContraseña.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(41)))), ((int)(((byte)(86)))));
-            this.txtContraseña.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtContraseña.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtContraseña.ForeColor = System.Drawing.Color.White;
-            this.txtContraseña.Location = new System.Drawing.Point(457, 304);
-            this.txtContraseña.Name = "txtContraseña";
-            this.txtContraseña.Size = new System.Drawing.Size(267, 28);
-            this.txtContraseña.TabIndex = 9;
-            this.txtContraseña.UseSystemPasswordChar = true;
-            this.txtContraseña.TextChanged += new System.EventHandler(this.txtContraseña_TextChanged);
+            txtContraseña.BackColor = Color.FromArgb(28, 41, 86);
+            txtContraseña.BorderStyle = BorderStyle.None;
+            txtContraseña.Font = new Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txtContraseña.ForeColor = Color.White;
+            txtContraseña.Location = new Point(457, 304);
+            txtContraseña.Name = "txtContraseña";
+            txtContraseña.Size = new Size(267, 28);
+            txtContraseña.TabIndex = 9;
+            txtContraseña.UseSystemPasswordChar = true;
+            txtContraseña.TextChanged += txtContraseña_TextChanged;
             // 
             // btniniciar
             // 
-            this.btniniciar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.btniniciar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btniniciar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btniniciar.FlatAppearance.BorderSize = 0;
-            this.btniniciar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.btniniciar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btniniciar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btniniciar.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btniniciar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.btniniciar.Location = new System.Drawing.Point(457, 391);
-            this.btniniciar.Name = "btniniciar";
-            this.btniniciar.Size = new System.Drawing.Size(240, 85);
-            this.btniniciar.TabIndex = 10;
-            this.btniniciar.Text = "INICIAR SESIÓN";
-            this.btniniciar.UseVisualStyleBackColor = false;
-            this.btniniciar.Click += new System.EventHandler(this.button1_Click_1);
+            btniniciar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btniniciar.BackColor = Color.FromArgb(0, 122, 204);
+            btniniciar.BackgroundImageLayout = ImageLayout.None;
+            btniniciar.FlatAppearance.BorderColor = Color.FromArgb(64, 64, 64);
+            btniniciar.FlatAppearance.BorderSize = 0;
+            btniniciar.FlatAppearance.MouseDownBackColor = Color.FromArgb(28, 28, 28);
+            btniniciar.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
+            btniniciar.FlatStyle = FlatStyle.Flat;
+            btniniciar.Font = new Font("Trebuchet MS", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btniniciar.ForeColor = Color.FromArgb(34, 36, 49);
+            btniniciar.Location = new Point(457, 391);
+            btniniciar.Name = "btniniciar";
+            btniniciar.Size = new Size(240, 85);
+            btniniciar.TabIndex = 10;
+            btniniciar.Text = "INICIAR SESIÓN";
+            btniniciar.UseVisualStyleBackColor = false;
+            btniniciar.Click += button1_Click_1;
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.panel1.Controls.Add(this.pictureBox5);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(286, 511);
-            this.panel1.TabIndex = 11;
-            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
+            panel1.BackColor = Color.FromArgb(0, 122, 204);
+            panel1.Controls.Add(pictureBox5);
+            panel1.Dock = DockStyle.Left;
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(286, 511);
+            panel1.TabIndex = 11;
+            panel1.MouseDown += panel1_MouseDown;
             // 
             // pictureBox5
             // 
-            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(46, 111);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(191, 286);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox5.TabIndex = 0;
-            this.pictureBox5.TabStop = false;
+            pictureBox5.Image = (Image)resources.GetObject("pictureBox5.Image");
+            pictureBox5.Location = new Point(46, 111);
+            pictureBox5.Name = "pictureBox5";
+            pictureBox5.Size = new Size(191, 286);
+            pictureBox5.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox5.TabIndex = 0;
+            pictureBox5.TabStop = false;
             // 
             // pictureBox3
             // 
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(821, 12);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(20, 20);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 14;
-            this.pictureBox3.TabStop = false;
-            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
-            this.pictureBox3.MouseEnter += new System.EventHandler(this.pictureBox3_MouseEnter);
-            this.pictureBox3.MouseLeave += new System.EventHandler(this.pictureBox3_MouseLeave);
+            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
+            pictureBox3.Location = new Point(821, 12);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(20, 20);
+            pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox3.TabIndex = 14;
+            pictureBox3.TabStop = false;
+            pictureBox3.Click += pictureBox3_Click;
+            pictureBox3.MouseEnter += pictureBox3_MouseEnter;
+            pictureBox3.MouseLeave += pictureBox3_MouseLeave;
             // 
             // pictureBox4
             // 
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(795, 12);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(20, 20);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 15;
-            this.pictureBox4.TabStop = false;
-            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
+            pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
+            pictureBox4.Location = new Point(795, 12);
+            pictureBox4.Name = "pictureBox4";
+            pictureBox4.Size = new Size(20, 20);
+            pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox4.TabIndex = 15;
+            pictureBox4.TabStop = false;
+            pictureBox4.Click += pictureBox4_Click;
             // 
             // pictureBox6
             // 
-            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(361, 160);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(61, 50);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox6.TabIndex = 16;
-            this.pictureBox6.TabStop = false;
+            pictureBox6.Image = (Image)resources.GetObject("pictureBox6.Image");
+            pictureBox6.Location = new Point(361, 160);
+            pictureBox6.Name = "pictureBox6";
+            pictureBox6.Size = new Size(61, 50);
+            pictureBox6.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox6.TabIndex = 16;
+            pictureBox6.TabStop = false;
             // 
             // pictureBox7
             // 
-            this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
-            this.pictureBox7.Location = new System.Drawing.Point(361, 295);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(61, 50);
-            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox7.TabIndex = 17;
-            this.pictureBox7.TabStop = false;
+            pictureBox7.Image = (Image)resources.GetObject("pictureBox7.Image");
+            pictureBox7.Location = new Point(361, 295);
+            pictureBox7.Name = "pictureBox7";
+            pictureBox7.Size = new Size(61, 50);
+            pictureBox7.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox7.TabIndex = 17;
+            pictureBox7.TabStop = false;
             // 
             // pbUsuario
             // 
-            this.pbUsuario.BackColor = System.Drawing.Color.Transparent;
-            this.pbUsuario.Image = global::Sistema_control_de_Inventario.Properties.Resources.correcto;
-            this.pbUsuario.Location = new System.Drawing.Point(442, 160);
-            this.pbUsuario.Name = "pbUsuario";
-            this.pbUsuario.Size = new System.Drawing.Size(295, 50);
-            this.pbUsuario.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbUsuario.TabIndex = 18;
-            this.pbUsuario.TabStop = false;
+            pbUsuario.BackColor = Color.Transparent;
+            pbUsuario.Image = Properties.Resources.correcto;
+            pbUsuario.Location = new Point(442, 160);
+            pbUsuario.Name = "pbUsuario";
+            pbUsuario.Size = new Size(295, 50);
+            pbUsuario.SizeMode = PictureBoxSizeMode.StretchImage;
+            pbUsuario.TabIndex = 18;
+            pbUsuario.TabStop = false;
             // 
             // pbContraseña
             // 
-            this.pbContraseña.BackColor = System.Drawing.Color.Transparent;
-            this.pbContraseña.Image = global::Sistema_control_de_Inventario.Properties.Resources.correcto;
-            this.pbContraseña.Location = new System.Drawing.Point(443, 294);
-            this.pbContraseña.Name = "pbContraseña";
-            this.pbContraseña.Size = new System.Drawing.Size(294, 50);
-            this.pbContraseña.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbContraseña.TabIndex = 19;
-            this.pbContraseña.TabStop = false;
+            pbContraseña.BackColor = Color.Transparent;
+            pbContraseña.Image = Properties.Resources.correcto;
+            pbContraseña.Location = new Point(443, 294);
+            pbContraseña.Name = "pbContraseña";
+            pbContraseña.Size = new Size(294, 50);
+            pbContraseña.SizeMode = PictureBoxSizeMode.StretchImage;
+            pbContraseña.TabIndex = 19;
+            pbContraseña.TabStop = false;
             // 
             // btnMostrarCon
             // 
-            this.btnMostrarCon.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMostrarCon.Image = global::Sistema_control_de_Inventario.Properties.Resources.ocultar;
-            this.btnMostrarCon.Location = new System.Drawing.Point(754, 294);
-            this.btnMostrarCon.Name = "btnMostrarCon";
-            this.btnMostrarCon.Size = new System.Drawing.Size(44, 49);
-            this.btnMostrarCon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnMostrarCon.TabIndex = 21;
-            this.btnMostrarCon.TabStop = false;
-            this.btnMostrarCon.Visible = false;
-            this.btnMostrarCon.Click += new System.EventHandler(this.btnMostrarCon_Click);
+            btnMostrarCon.Cursor = Cursors.Hand;
+            btnMostrarCon.Image = Properties.Resources.ocultar;
+            btnMostrarCon.Location = new Point(754, 294);
+            btnMostrarCon.Name = "btnMostrarCon";
+            btnMostrarCon.Size = new Size(44, 49);
+            btnMostrarCon.SizeMode = PictureBoxSizeMode.Zoom;
+            btnMostrarCon.TabIndex = 21;
+            btnMostrarCon.TabStop = false;
+            btnMostrarCon.Visible = false;
+            btnMostrarCon.Click += btnMostrarCon_Click;
             // 
             // Login
             // 
-            this.AcceptButton = this.btniniciar;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.ClientSize = new System.Drawing.Size(853, 511);
-            this.Controls.Add(this.btnMostrarCon);
-            this.Controls.Add(this.txtContraseña);
-            this.Controls.Add(this.pbContraseña);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.pbUsuario);
-            this.Controls.Add(this.pictureBox7);
-            this.Controls.Add(this.pictureBox6);
-            this.Controls.Add(this.pictureBox4);
-            this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.btniniciar);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Login";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Login";
-            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Login_MouseDown);
-            this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbUsuario)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbContraseña)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMostrarCon)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AcceptButton = btniniciar;
+            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(34, 36, 49);
+            ClientSize = new Size(853, 511);
+            Controls.Add(btnMostrarCon);
+            Controls.Add(txtContraseña);
+            Controls.Add(pbContraseña);
+            Controls.Add(textBox1);
+            Controls.Add(pbUsuario);
+            Controls.Add(pictureBox7);
+            Controls.Add(pictureBox6);
+            Controls.Add(pictureBox4);
+            Controls.Add(pictureBox3);
+            Controls.Add(btniniciar);
+            Controls.Add(panel1);
+            Controls.Add(label4);
+            Controls.Add(label3);
+            Controls.Add(label2);
+            Controls.Add(label1);
+            FormBorderStyle = FormBorderStyle.None;
+            Name = "Login";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Login";
+            MouseDown += Login_MouseDown;
+            panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbUsuario).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbContraseña).EndInit();
+            ((System.ComponentModel.ISupportInitialize)btnMostrarCon).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

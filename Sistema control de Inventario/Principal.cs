@@ -31,11 +31,12 @@ namespace Sistema_control_de_Inventario
         {
             if (MessageBox.Show("¿Desea cerrar sesion?", "Salir", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.Yes)
             {
-                MessageBox.Show("Sesion cerrada");
+               
                 Login log = new Login();
                 this.Hide();
+                MessageBox.Show("Sesion cerrada");
                 log.Show();
-
+               
 
             }
 
@@ -54,8 +55,27 @@ namespace Sistema_control_de_Inventario
             fh.Show();
 
         }
+        private Button botonSeleccionado;
+        private Color colorPredeterminado = Color.FromArgb(0, 122, 204);
+        private Color colorSeleccionado = Color.Black;
+
+        private void CambiarColorBotonSeleccionado(Button boton)
+        {
+            if (botonSeleccionado != null)
+            {
+               
+                botonSeleccionado.BackColor = colorPredeterminado;
+            }
+            
+            boton.BackColor = colorSeleccionado;
+            botonSeleccionado = boton;
+        }
         private void btnProductos_Click(object sender, EventArgs e)
         {
+            Button boton = (Button)sender;
+            CambiarColorBotonSeleccionado(boton);
+
+            
             panelInformes.Visible = false;
             
             inventario inv = new inventario();
@@ -149,6 +169,8 @@ namespace Sistema_control_de_Inventario
 
         private void button1_Click(object sender, EventArgs e)
         {
+            Button boton = (Button)sender;
+            CambiarColorBotonSeleccionado(boton);
             panelInformes.Visible = false;
             Proveedor pr= new Proveedor();
             pr.FormClosed += new FormClosedEventHandler(MostraralcerrarForm);
@@ -157,6 +179,10 @@ namespace Sistema_control_de_Inventario
 
         private void btnCrearUsuario_Click(object sender, EventArgs e)
         {
+            
+            Button boton = (Button)sender;
+
+            CambiarColorBotonSeleccionado(boton);
             panelInformes.Visible = false;
             string servidor = "127.0.0.1";
             string puerto = "3306";
@@ -166,7 +192,7 @@ namespace Sistema_control_de_Inventario
 
 
             string usuario = Microsoft.VisualBasic.Interaction.InputBox("Ingrese el nombre de usuario:", "Agregar dato");
-            string contraseña = Microsoft.VisualBasic.Interaction.InputBox("Ingrese la constraseña del usuario:", "Agregar dato");
+            string contraseña = Microsoft.VisualBasic.Interaction.InputBox("Ingrese la contraseña del usuario:", "Agregar dato");
 
 
 
@@ -203,10 +229,16 @@ namespace Sistema_control_de_Inventario
                 {
                     MessageBox.Show("Error al agregar el usuario: " + ex.Message);
                 }
+                finally
+                {
+                    // Restablecer el color del botón al predeterminado
+                    boton.BackColor = colorPredeterminado;
+                }
             }
             else
             {
                 MessageBox.Show("Por favor, complete todos los campos.");
+                boton.BackColor = colorPredeterminado;
             }
         }
 
@@ -222,6 +254,9 @@ namespace Sistema_control_de_Inventario
 
         private void button2_Click(object sender, EventArgs e)
         {
+            Button boton = (Button)sender;
+
+            CambiarColorBotonSeleccionado(boton);
             panelInformes.Visible = !panelInformes.Visible;
         }
 
