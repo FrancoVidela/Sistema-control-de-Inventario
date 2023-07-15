@@ -223,7 +223,7 @@ namespace Sistema_control_de_Inventario
                     using (MySqlConnection connection = new MySqlConnection(connectionString))
                     {
                         connection.Open();
-                        string consulta = "INSERT INTO proveedores (ID_Proveedores, Nombre_Proveedor, Rut_Proveedor, Direccion_Proveedor, Correo_Proveedor, Telefono_Proveedor) VALUES (@id, @nombre, @rut, @direccion, @correo, @telefono)";
+                        string consulta = "INSERT INTO proveedores (ID_Proveedores, Nombre_Proveedor, Rut_Proveedor, Dirección_Proveedor, Correo_Proveedor, Telefono_Proveedor) VALUES (@id, @nombre, @rut, @direccion, @correo, @telefono)";
 
                         MySqlCommand command = new MySqlCommand(consulta, connection);
                         command.Parameters.AddWithValue("@id", Id);
@@ -306,12 +306,12 @@ namespace Sistema_control_de_Inventario
                     string idProveedor = fila.Cells["ID_Proveedores"].Value.ToString();
                     string nombreProveedor = fila.Cells["Nombre_Proveedor"].Value.ToString();
                     string rutproveedor = fila.Cells["Rut_Proveedor"].Value.ToString();
-                    string direccionproveedor = fila.Cells["Direccion_Proveedor"].Value.ToString();
+                    string direccionproveedor = fila.Cells["Dirección_Proveedor"].Value.ToString();
                     string correoproveedor = fila.Cells["Correo_Proveedor"].Value.ToString();
                     string telefonoproveedor = fila.Cells["Telefono_Proveedor"].Value.ToString();
 
                     // Ejecutar la actualización en la base de datos
-                    string consulta = "UPDATE proveedores SET Nombre_Proveedor = @nombre, Rut_Proveedor = @rut, Direccion_Proveedor = @direccion, Correo_Proveedor = @correo,Telefono_Proveedor = @fono WHERE ID_Proveedores = @id";
+                    string consulta = "UPDATE proveedores SET Nombre_Proveedor = @nombre, Rut_Proveedor = @rut, Dirección_Proveedor = @direccion, Correo_Proveedor = @correo,Telefono_Proveedor = @fono WHERE ID_Proveedores = @id";
                     using (MySqlCommand comando = new MySqlCommand(consulta, conexion))
                     {
                         comando.Parameters.AddWithValue("@nombre", nombreProveedor);

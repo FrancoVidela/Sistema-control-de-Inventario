@@ -16,7 +16,7 @@ namespace Sistema_control_de_Inventario
         public Principal2()
         {
             InitializeComponent();
-            panelInformes.Visible= false;
+            
         }
 
         [DllImport("user32.Dll", EntryPoint = "ReleaseCapture")]
@@ -30,7 +30,7 @@ namespace Sistema_control_de_Inventario
         {
             if (MessageBox.Show("¿Desea cerrar sesion?", "Salir", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.Yes)
             {
-                
+
                 Login log = new Login();
 
                 this.Hide();
@@ -73,12 +73,12 @@ namespace Sistema_control_de_Inventario
         {
             Button boton = (Button)sender;
             CambiarColorBotonSeleccionado(boton);
-            panelInformes.Visible = false;
+          
 
             inventario2 inv = new inventario2();
             inv.FormClosed += new FormClosedEventHandler(MostraralcerrarForm);
             AbrirForm(inv);
-            
+
         }
 
 
@@ -164,11 +164,11 @@ namespace Sistema_control_de_Inventario
         {
             Button boton = (Button)sender;
             CambiarColorBotonSeleccionado(boton);
-            panelInformes.Visible = false;
+            
             Proveedor2 pr = new Proveedor2();
             pr.FormClosed += new FormClosedEventHandler(MostraralcerrarForm);
             AbrirForm(pr);
-            
+
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -176,13 +176,7 @@ namespace Sistema_control_de_Inventario
 
         }
 
-        private void btnInformes_Click(object sender, EventArgs e)
-        {
-            Button boton = (Button)sender;
-            CambiarColorBotonSeleccionado(boton);
-            panelInformes.Visible = !panelInformes.Visible;
-            
-        }
+
 
         private void PanelContenedor_Paint(object sender, PaintEventArgs e)
         {

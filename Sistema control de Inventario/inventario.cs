@@ -228,7 +228,7 @@ namespace Sistema_control_de_Inventario
                     using (MySqlConnection connection = new MySqlConnection(connectionString))
                     {
                         connection.Open();
-                        string consulta = "INSERT INTO productos (ID_Producto, Nombre_Producto, Cantidad_Producto) VALUES (@id, @nombre, @cantidad)";
+                        string consulta = "INSERT INTO productos (ID_Producto, Nombre_Producto, Stock_Producto) VALUES (@id, @nombre, @cantidad)";
 
                         {
 
@@ -284,10 +284,10 @@ namespace Sistema_control_de_Inventario
                 {
                     string idProducto = fila.Cells["ID_Producto"].Value.ToString();
                     string nombreProducto = fila.Cells["Nombre_Producto"].Value.ToString();
-                    string cantidadProducto = fila.Cells["Cantidad_Producto"].Value.ToString();
+                    string cantidadProducto = fila.Cells["Stock_Producto"].Value.ToString();
 
                     // Ejecutar la actualización en la base de datos
-                    string consulta = "UPDATE productos SET Nombre_Producto = @nombre, Cantidad_Producto = @cantidad WHERE ID_Producto = @id";
+                    string consulta = "UPDATE productos SET Nombre_Producto = @nombre, Stock_Producto = @cantidad WHERE ID_Producto = @id";
                     using (MySqlCommand comando = new MySqlCommand(consulta, conexion))
                     {
                         comando.Parameters.AddWithValue("@nombre", nombreProducto);
